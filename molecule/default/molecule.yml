@@ -1,0 +1,21 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: debian-10
+    image: kornkalle/debian-systemd-python:buster
+    pre_build_image: true
+  - name: debian-9
+    image: kornkalle/debian-systemd-python:stretch
+    pre_build_image: true
+  - name: centos-8
+    image: kornkalle/centos-systemd-python:8
+    pre_build_image: true
+provisioner:
+  name: ansible
+  playbooks:
+    prepare: prepare.yml
+verifier:
+  name: ansible

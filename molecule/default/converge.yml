@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include ansible-blackbox-exporter"
+      include_role:
+        name: "ansible-blackbox-exporter"
